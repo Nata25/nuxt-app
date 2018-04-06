@@ -11,6 +11,8 @@ npm-debug.log
 dist
 
 # system files
-.vscode
+.vscode/
+.idea/
+.nuxt
 .DS_Store
 */.DS_Store
