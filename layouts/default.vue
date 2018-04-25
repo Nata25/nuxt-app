@@ -49,7 +49,7 @@
             justify-end
             class="blue--text text--lighten-5"
           >
-            Vue Nuxt Vuetify | 2018
+            Vue _ Nuxt _ Vuetify | 2018
           </v-layout>
       </v-container>
 

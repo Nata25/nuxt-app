@@ -21,7 +21,7 @@ Vue.use(Vuetify, {
     secondary: '#424242',
     info: '#0D47A1',
     warning: '#ffb300',
-    error: '#B71C1C',
+    error: '#f35f54',
     success: '#2E7D32'
   }
 })

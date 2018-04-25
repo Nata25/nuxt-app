@@ -1,7 +1,7 @@
 <template>
   <v-flex xs12 md6 lg4>
     <v-card>
-      <v-card-media :src="post.image" height="200px">
+      <v-card-media :src="post.thumbnailLink" height="200px">
       </v-card-media>
       <v-card-title primary-title>
         <div>
@@ -14,8 +14,8 @@
           flat
           color="orange"
           exact
-          to="/posts/1"
-        >Details</v-btn>
+          :to="postLink"
+        >{{ isAdmin ? 'Edit post' : 'Details' }}</v-btn>
       </v-card-actions>
     </v-card>
   </v-flex>
@@ -27,6 +27,15 @@
       post: {
         type: Object,
         required: true,
+      },
+      isAdmin: {
+        type: Boolean,
+        required: true,
+      }
+    },
+    computed: {
+      postLink() {
+        return this.isAdmin ? `/admin/${this.id}` : `/posts/${this.id}`
       }
     }
   }
