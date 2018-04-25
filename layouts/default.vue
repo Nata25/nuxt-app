@@ -4,7 +4,11 @@
     <v-toolbar :fixed="false" app>
       <v-toolbar-side-icon @click="isClosed = !isClosed"></v-toolbar-side-icon>
       <v-spacer></v-spacer>
-      <v-btn flat>Natalia Ivanova</v-btn>
+      <v-btn
+        color="info"
+        nuxt
+        to="/admin"
+      >Admin</v-btn>
     </v-toolbar>
 
     <v-navigation-drawer
@@ -12,6 +16,7 @@
       :clipped="false"
       :fixed="false"
       :app="true"
+      permanent
     >
       <v-list>
         <v-list-tile
