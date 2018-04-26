@@ -26,6 +26,21 @@
   </div>
 </template>
 
+<script>
+  export default {
+    asyncData(context, callback) {
+      setTimeout(() => {
+        callback(null, {
+          post: {
+            title: `What is Abstract Art? (post ID: ${context.params.id})`,
+            id: '1'
+          }
+        });
+      }, 1000);
+    }
+  }
+</script>
+
 <style>
   .body-text {
     margin-top: 30px;

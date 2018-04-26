@@ -13,7 +13,7 @@
     >Logout</v-btn>
     <v-btn
       v-if="isLoggedIn"
-      color="info"
+      color="success"
       nuxt
       to="/admin"
     >Admin</v-btn>
