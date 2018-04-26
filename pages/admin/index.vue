@@ -9,27 +9,22 @@
       Existing posts
     </h3>
 
-    <v-container grid-list-lg>
-      <v-layout justify-center wrap>
-        <PostPreview
-          v-for="(post, index) in posts"
-          :key="index"
-          :post="post"
-          :isAdmin="true"
-        />
-      </v-layout>
-    </v-container>
+    <PostList
+      :posts="posts"
+      :isAdmin="isAdmin"
+    />
+
   </div>
 </template>
 
 <script>
 
-  import PostPreview from '~/components/PostPreview';
+  import PostList from '~/components/PostList';
   import AppButton from '~/components/UI/AppButton';
 
   export default {
     components: {
-      PostPreview,
+      PostList,
       AppButton,
     },
     data() {
@@ -47,7 +42,8 @@
             title: 'My Third Post',
             thumbnailLink: 'https://img00.deviantart.net/95e7/i/2014/007/d/3/google_abstract_by_dynamicz34-d718hzj.png',
           }
-        ]
+        ],
+        isAdmin: true
       }
     }
   }

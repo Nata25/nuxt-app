@@ -35,7 +35,7 @@
     },
     computed: {
       postLink() {
-        return this.isAdmin ? `/admin/${this.id}` : `/posts/${this.id}`
+        return this.isAdmin ? `/admin/${this.post.id}` : `/posts/${this.post.id}`
       }
     }
   }
