@@ -1,22 +1,8 @@
-# my-nuxt-app
+# Abstract Blog App
 
-> My slick Nuxt.js project
+`Nuxt.js + Vue.js + Vuetify.js`
 
-## Build Setup
+This is inspired by **Maximilian Schwarzm?ller** 
+and his online course [Nuxt.js - Vue.js on Steroids](https://www.udemy.com/nuxtjs-vuejs-on-steroids/).
 
-``` bash
-# install dependencies
-$ yarn install
-
-# serve with hot reload at localhost:3000
-$ yarn run dev
-
-# build for production and launch server
-$ yarn run build
-$ yarn start
-
-# generate static project
-$ yarn run generate
-```
-
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+Project is bootstrapped by `vuetify + nuxt` [starter kit](https://github.com/vuetifyjs/nuxt).
