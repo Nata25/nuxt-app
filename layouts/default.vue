@@ -4,11 +4,7 @@
     <v-toolbar :fixed="false" app>
       <v-toolbar-side-icon @click="isClosed = !isClosed"></v-toolbar-side-icon>
       <v-spacer></v-spacer>
-      <v-btn
-        color="info"
-        nuxt
-        to="/admin"
-      >Admin</v-btn>
+      <ToolbarNav />
     </v-toolbar>
 
     <v-navigation-drawer
@@ -59,7 +55,12 @@
 </template>
 
 <script>
+  import ToolbarNav from '~/components/ToolbarNav';
+
   export default {
+    components: {
+      ToolbarNav,
+    },
     data() {
       return {
         items: [
