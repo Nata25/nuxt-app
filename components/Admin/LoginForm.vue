@@ -70,7 +70,9 @@
       },
       onSubmit() {
         if (this.$refs.loginForm.validate()) {
-          console.log('Form is valid, do something on the server...');
+          console.log('form is valid!');
+          this.$store.commit('setAdminStatus', true);
+          this.$router.push('/');
         }
       }
     }

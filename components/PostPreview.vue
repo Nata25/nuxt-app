@@ -36,7 +36,7 @@
     computed: {
       postLink() {
         return this.isAdmin ? `/admin/${this.post.id}` : `/posts/${this.post.id}`
-      }
+      },
     }
   }
 </script>

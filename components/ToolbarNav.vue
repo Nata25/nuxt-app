@@ -1,18 +1,18 @@
 <template>
   <div>
     <v-btn
-      v-if="!isLoggedIn"
+      v-if="!isAdmin"
       color="info"
       nuxt
       to="/admin/auth"
     >Log in</v-btn>
     <v-btn
-      v-if="isLoggedIn"
+      v-if="isAdmin"
       color="info"
       @click="onLogout"
     >Logout</v-btn>
     <v-btn
-      v-if="isLoggedIn"
+      v-if="isAdmin"
       color="success"
       nuxt
       to="/admin"
@@ -22,14 +22,14 @@
 
 <script>
   export default {
-    data() {
-      return {
-        isLoggedIn: true,
+    computed: {
+      isAdmin() {
+        return this.$store.getters.isAdmin;
       }
     },
     methods: {
       onLogout() {
-        this.isLoggedIn = false;
+        this.$store.commit('setAdminStatus', false);
         this.$router.push('/');
       }
     }

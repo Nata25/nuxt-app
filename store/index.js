@@ -3,11 +3,15 @@ import Vuex from 'vuex';
 const createStore = () => {
   return new Vuex.Store({
     state: {
-      loadedPosts: []
+      loadedPosts: [],
+      isAdmin: false,
     },
     mutations: {
       setPosts(state, posts) {
         state.loadedPosts = posts;
+      },
+      setAdminStatus(state, status) {
+        state.isAdmin = status;
       }
     },
     actions: {
@@ -38,14 +42,17 @@ const createStore = () => {
       },
       setPosts({ commit }, posts) {
         commit('setPosts', posts);
+      },
+      setAdminStatus({ commit }, status) {
+        commit('setAdminStatus', status);
       }
     },
     getters: {
       loadedPosts(state) {
         return state.loadedPosts;
       },
-      dummyPosts(state) {
-        return []
+      isAdmin(state) {
+        return state.isAdmin;
       }
     }
   });

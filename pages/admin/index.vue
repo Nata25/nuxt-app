@@ -27,14 +27,12 @@
       PostList,
       AppButton,
     },
-    data() {
-      return {
-        isAdmin: true
-      }
-    },
     computed: {
       posts() {
         return this.$store.getters.loadedPosts;
+      },
+      isAdmin() {
+        return this.$store.getters.isAdmin;
       }
     },
   }

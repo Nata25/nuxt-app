@@ -30,12 +30,10 @@ export default {
   computed: {
     posts() {
       return this.$store.getters.loadedPosts;
-    }
-  },
-  data() {
-    return {
-      isAdmin: false,
-    }
+    },
+    isAdmin() {
+      return this.$store.getters.isAdmin;
+    },
   }
 }
 </script>
