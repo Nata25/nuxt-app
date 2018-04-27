@@ -12,14 +12,22 @@
       label="Link to thumbnail"
       name="thumb"
       required
-      v-model="editedPost.thumbnailLink"
+      v-model="editedPost.thumbnail"
+      :rules="[requiredRule]"
+    ></AppInput>
+
+    <AppInput
+      label="Summary"
+      name="summary"
+      required
+      v-model="editedPost.summary"
       :rules="[requiredRule]"
     ></AppInput>
 
     <AppInput
       controlType="textarea"
       label="Post text"
-      name="thumb"
+      name="content"
       v-model="editedPost.content"
       required
       :rules="[requiredRule]"
@@ -68,10 +76,10 @@
         valid: false,
         requiredRule: v => !!v || 'The field is required',
         editedPost: this.post ? { ...this.post } : {
-          author: '',
           title: '',
+          summary: '',
           content: '',
-          thumbnailLink: ''
+          thumbnail: ''
         }
       }
     },
@@ -81,7 +89,7 @@
       },
       onFormSubmit() {
         if (this.$refs.form.validate()) {
-          console.log('form is valid!');
+          this.$emit('submit', this.editedPost);
         }
       }
     }
