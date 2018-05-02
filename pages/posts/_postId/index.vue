@@ -15,6 +15,13 @@
       <p class="body-text blue-grey--text">
         {{ post.content }}
       </p>
+      <v-btn
+          v-if="isAdmin"
+          flat
+          color="orange"
+          exact
+          :to="`/admin/${post.id}`"
+        >Edit post</v-btn>
     </section>
   </div>
 </template>
@@ -28,9 +35,15 @@
         context.params.postId + '.json'
       )
       .then(res => ({
-          post: res.data
+          post: {...res.data, id: context.params.postId}
       }))
       .catch(e => { console.log(e); })
+    },
+    computed: {
+      isAdmin() {
+        console.log(this.post);
+        return this.$store.getters.isAdmin;
+      }
     }
   }
 </script>
