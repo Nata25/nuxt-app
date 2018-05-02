@@ -89,6 +89,9 @@
       onSubmit() {
         if (this.$refs.registrationForm.validate()) {
           console.log('Form is valid, do something on the server...');
+          this.$store.commit('setAdminStatus', true);
+          localStorage.setItem('loggedIn', '1');
+          this.$router.push('/');
         }
       }
     }

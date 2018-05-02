@@ -9,14 +9,6 @@
     ></AppInput>
 
     <AppInput
-      label="Link to thumbnail"
-      name="thumb"
-      required
-      v-model="editedPost.thumbnail"
-      :rules="[requiredRule]"
-    ></AppInput>
-
-    <AppInput
       label="Summary"
       name="summary"
       required
@@ -31,6 +23,32 @@
       v-model="editedPost.content"
       required
       :rules="[requiredRule]"
+    ></AppInput>
+
+    <AppInput
+      label="Link to thumbnail"
+      name="thumb"
+      required
+      v-model="editedPost.thumbnail"
+      :rules="[requiredRule]"
+    ></AppInput>
+
+    <AppInput
+      label="Image caption or note"
+      name="caption"
+      v-model="editedPost.caption"
+    ></AppInput>
+
+    <AppInput
+      label="Reference text"
+      name="refText"
+      v-model="editedPost.refText"
+    ></AppInput>
+
+    <AppInput
+      label="Reference link"
+      name="refLink"
+      v-model="editedPost.refLink"
     ></AppInput>
 
     <AppButton
@@ -79,7 +97,10 @@
           title: '',
           summary: '',
           content: '',
-          thumbnail: ''
+          thumbnail: '',
+          caption: '',
+          refLink: '',
+          refText: ''
         }
       }
     },

@@ -5,7 +5,7 @@ const createStore = () => {
   return new Vuex.Store({
     state: {
       posts: [],
-      isAdmin: false,
+      isAdmin: window.localStorage.getItem('loggedIn') ? true : false,
     },
     mutations: {
       setPosts(state, posts) {
