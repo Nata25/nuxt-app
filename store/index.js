@@ -5,7 +5,7 @@ const createStore = () => {
   return new Vuex.Store({
     state: {
       posts: [],
-      isAdmin: false,
+      isAdmin: true,
     },
     mutations: {
       setPosts(state, posts) {
@@ -20,6 +20,9 @@ const createStore = () => {
       },
       addPost(state, post) {
         state.posts.push(post);
+      },
+      deletePost(state, ind) {
+        state.posts = state.posts.slice(0, ind).concat(state.posts.slice(ind+1));
       }
     },
     actions: {
@@ -47,7 +50,11 @@ const createStore = () => {
       },
       addPost({ commit }, post) {
         commit('addPost', post);
-      }
+      },
+      deletePost( { commit, getters }, postId) {
+        const targetPostInd = getters.posts.findIndex(p => p.id === postId);
+        commit('deletePost', targetPostInd);
+      } 
     },
     getters: {
       posts(state) {

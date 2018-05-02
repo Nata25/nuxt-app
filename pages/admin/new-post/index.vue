@@ -18,7 +18,6 @@
       onSubmit(postData) {
         axios.post('https://nuxt-blog-8718b.firebaseio.com/posts.json', postData)
           .then(result => {
-            console.log(result);
             this.$store.dispatch('addPost', { ...postData, id: result.data.name } );
             this.$router.push('/admin');
           })
