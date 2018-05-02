@@ -29,7 +29,7 @@
     },
     computed: {
       posts() {
-        return this.$store.getters.loadedPosts;
+        return this.$store.getters.posts;
       },
       isAdmin() {
         return this.$store.getters.isAdmin;

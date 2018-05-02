@@ -33,15 +33,12 @@
 
   export default {
     asyncData(context) {
-      console.log('async data fired');
       return axios.get('https://nuxt-blog-8718b.firebaseio.com/posts/' +
-        context.params.id + '.json'
+        context.params.postId + '.json'
       )
-      .then(res => {
-        return {
+      .then(res => ({
           post: res.data
-        }
-      })
+      }))
       .catch(e => { console.log(e); })
 
     //  setTimeout(() => {

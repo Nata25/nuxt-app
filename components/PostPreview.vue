@@ -5,7 +5,11 @@
       </v-card-media>
       <v-card-title primary-title>
         <div>
-          <h3 class="headline mb-0">{{ post.title }} </h3>
+          <h3 class="headline mb-0">
+            <nuxt-link :to="`/posts/${this.post.id}`">
+              {{ post.title }}
+            </nuxt-link>
+          </h3>
           <div>{{ post.summary }}</div>
         </div>
       </v-card-title>
@@ -40,6 +44,15 @@
     }
   }
 </script>
+
+<style scoped>
+  h3 > a {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #000;
+    text-decoration: none;
+  }
+</style>
 
 
 
