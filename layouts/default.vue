@@ -14,22 +14,7 @@
       :app="true"
       permanent
     >
-      <v-list>
-        <v-list-tile
-          :router="true"
-          :to="item.to"
-          :key="i"
-          v-for="(item, i) in items"
-          exact
-        >
-          <v-list-tile-action>
-            <v-icon v-html="item.icon"></v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title v-text="item.title"></v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
+     <Navigation />
 
     </v-navigation-drawer>
     <v-content>
@@ -55,31 +40,18 @@
 </template>
 
 <script>
+  import axios from 'axios';
+  import Navigation from '~/components/Navigation';
   import ToolbarNav from '~/components/ToolbarNav';
 
   export default {
     components: {
       ToolbarNav,
+      Navigation
     },
+    
     data() {
       return {
-        items: [
-          {
-            icon: '',
-            to: '/',
-            title: 'Home page'
-          },
-          {
-            icon: '',
-            to: '/about',
-            title: 'About me'
-          },
-          {
-            icon: '',
-            to: '/posts/1',
-            title: 'What is Abstract Art?'
-          }
-        ],
         isClosed: true,
       }
     }
