@@ -5,7 +5,7 @@ const createStore = () => {
   return new Vuex.Store({
     state: {
       posts: [],
-      isAdmin: window.localStorage.getItem('loggedIn') ? true : false,
+      isAdmin: false,
     },
     mutations: {
       setPosts(state, posts) {
@@ -17,6 +17,9 @@ const createStore = () => {
       updatePost(state, post) {
         const postIndex = state.posts.findIndex(p => p.id === post.id);
         state.posts[postIndex] = post;
+      },
+      addPost(state, post) {
+        state.posts.push(post);
       }
     },
     actions: {
@@ -41,6 +44,9 @@ const createStore = () => {
       },
       updatePost({ commit }, post) {
         commit('updatePost', post);
+      },
+      addPost({ commit }, post) {
+        commit('addPost', post);
       }
     },
     getters: {

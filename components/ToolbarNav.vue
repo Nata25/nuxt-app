@@ -30,7 +30,6 @@
     methods: {
       onLogout() {
         this.$store.commit('setAdminStatus', false);
-        localStorage.removeItem('loggedIn');
         this.$router.push('/');
       }
     }
